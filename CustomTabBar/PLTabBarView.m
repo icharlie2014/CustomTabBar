@@ -19,6 +19,7 @@
 - (void)addTarBarButtonWithName:(NSString *)name selName:(NSString *)selName
 {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:selName] forState:UIControlStateSelected];
     [button addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchDown];
@@ -50,6 +51,7 @@
         btn.tag = i;
         btnX = i * btnW;
         [btn setFrame:CGRectMake(btnX, btnY, btnW, btnH)];
+
         if (i == 0) {
             [self btnClicked:btn];
         }

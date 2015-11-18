@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //自定义
     PLTabBarView * tabbar = [[PLTabBarView alloc]init];
     tabbar.frame = self.tabBar.bounds;
     tabbar.delegate = self;
-    
+    [self.tabBar setTintColor:[UIColor redColor]];//文字颜色
     NSString * imageName = nil;
     NSString * selName = nil;
     for (int i = 0; i < self.childViewControllers.count; i++) {
@@ -31,6 +31,7 @@
         [tabbar addTarBarButtonWithName:imageName selName:selName];
     }
     [self.tabBar addSubview:tabbar];
+    
 }
 
 - (void)tabbar:(PLTabBarView *)tabbar didSelectedIndex:(NSInteger)selectIndex
